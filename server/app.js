@@ -15,7 +15,7 @@ const quizRoutes = require("./routes/quizRoutes");
 
 app.use(
     cors({
-        origin: ["https://paper-lingo.vercel.app/", "http://localhost:3000"],
+        origin: ["https://paper-lingo.vercel.app", "http://localhost:3000"],
         methods: "GET,POST,PUT,DELETE,OPTIONS",
         allowedHeaders: ["Authorization", "Content-Type"],
         credentials: true,
@@ -27,7 +27,7 @@ app.options("*", cors()); // Handle preflight requests
 // Ensure CORS headers are set in all responses
 app.use((req, res, next) => {
     const allowedOrigins = [
-        "https://paper-lingo.vercel.app/",
+        "https://paper-lingo.vercel.app",
         "http://localhost:3000",
     ];
     const origin = req.headers.origin;
